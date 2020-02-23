@@ -79,13 +79,14 @@
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pipefail
-    export GOPATH="`mktemp -d`"
-    mkdir -p $GOPATH/src/github.com/opencontainers/runc
-    cd $GOPATH/src/github.com/opencontainers/runc
-    tar -zx -C . -f {{ runc_download.dest }} --strip-components=1
-    make BUILDTAGS='ambient apparmor seccomp selinux'
-    make install
-    rm -rf $GOPATH
+    TMP_DIR="$(mktemp -d)" \
+      && export GOPATH=$TMP_DIR \
+      && mkdir -p $GOPATH/src/github.com/opencontainers/runc \
+      && cd $GOPATH/src/github.com/opencontainers/runc \
+      && tar -zx -C . -f {{ runc_download.dest }} --strip-components=1 \
+      && make BUILDTAGS='ambient apparmor seccomp selinux' \
+      && make install \
+      && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
