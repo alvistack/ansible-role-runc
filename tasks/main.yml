@@ -90,6 +90,8 @@
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
+  register: result
+  until: result is succeeded
   tags: runc
 
 - name: prepare files
