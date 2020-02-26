@@ -85,7 +85,6 @@
       && mkdir -p $GOPATH/src/github.com/opencontainers/runc \
       && cd $GOPATH/src/github.com/opencontainers/runc \
       && tar -zx -C . -f {{ runc_download.dest }} --strip-components=1 \
-      && make uninstall \
       && make BUILDTAGS='apparmor seccomp selinux' \
       && make install \
       && make install-man \
