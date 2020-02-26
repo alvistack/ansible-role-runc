@@ -86,6 +86,8 @@
       && tar -zx -C . -f {{ runc_download.dest }} --strip-components=1 \
       && make BUILDTAGS='apparmor seccomp selinux' \
       && make install \
+      && make install-man \
+      && make install-bash \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
@@ -103,4 +105,5 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/usr/local/sbin/runc", mode: "0755" }
+    - { dest: "/usr/local/share/bash-completion/completions/runc" }
   tags: runc
