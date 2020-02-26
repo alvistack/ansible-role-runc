@@ -57,6 +57,7 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/usr/local/sbin" }
+    - { dest: "/usr/local/share/bash-completion/completions" }
     - { dest: "{{ runc_download.dest | dirname }}" }
   tags: runc
 
