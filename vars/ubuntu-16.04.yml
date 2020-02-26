@@ -15,4 +15,8 @@
 # limitations under the License.
 
 _apt:
+  - { state: "latest", name: "bash-completion" }
+  - { state: "latest", name: "libapparmor-dev" }
   - { state: "latest", name: "libseccomp-dev" }
+  - { state: "latest", name: "libselinux-dev" }
+  - { state: "latest", name: "make" }

@@ -57,6 +57,7 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/usr/local/sbin" }
+    - { dest: "/usr/local/share/bash-completion/completions" }
     - { dest: "{{ runc_download.dest | dirname }}" }
   tags: runc
 
@@ -79,16 +80,25 @@
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pipefail
-    export GOPATH="`mktemp -d`"
-    mkdir -p $GOPATH/src/github.com/opencontainers/runc
-    cd $GOPATH/src/github.com/opencontainers/runc
-    tar -zx -C . -f {{ runc_download.dest }} --strip-components=1
-    make BUILDTAGS='ambient apparmor seccomp selinux'
-    make install
-    rm -rf $GOPATH
+    TMP_DIR="$(mktemp -d)" \
+      && export GOPATH=$TMP_DIR \
+      && export PATH="$GOPATH/bin:$PATH" \
+      && cd $GOPATH \
+      && go get -u github.com/cpuguy83/go-md2man \
+      && mkdir -p $GOPATH/src/github.com/opencontainers/runc \
+      && cd $GOPATH/src/github.com/opencontainers/runc \
+      && tar -zx -C . -f {{ runc_download.dest }} --strip-components=1 \
+      && make BUILDTAGS='apparmor seccomp selinux' \
+      && make install \
+      && make man \
+      && make install-man \
+      && make install-bash \
+      && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
+  register: result
+  until: result is succeeded
   tags: runc
 
 - name: prepare files
@@ -100,4 +110,5 @@
     state: "{{ item.state | default('file') }}"
   loop:
     - { dest: "/usr/local/sbin/runc", mode: "0755" }
+    - { dest: "/usr/local/share/bash-completion/completions/runc" }
   tags: runc
