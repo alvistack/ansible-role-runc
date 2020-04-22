@@ -74,19 +74,27 @@
   until: get_url_result is succeeded
   tags: runc
 
-- name: unarchive package
+- name: build package
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pipefail
-    cd /usr/local/sbin
     TMP_DIR="$(mktemp -d)" \
-      && cp {{ runc_download.dest }} $TMP_DIR/runc \
-      && chown root:root $TMP_DIR/runc \
-      && chmod 0755 $TMP_DIR/runc \
-      && mv $TMP_DIR/runc . \
+      && export GOPATH=$TMP_DIR \
+      && export PATH="$GOPATH/bin:$PATH" \
+      && cd $GOPATH \
+      && go get -u github.com/cpuguy83/go-md2man \
+      && mkdir -p $GOPATH/src/github.com/opencontainers/runc \
+      && cd $GOPATH/src/github.com/opencontainers/runc \
+      && tar -zx -C . -f {{ runc_download.dest }} --strip-components=1 \
+      && make BUILDTAGS='apparmor seccomp selinux' \
+      && make install \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
   when: get_url_result is changed
+  register: result
+  until: result is succeeded
   tags: runc
 
 - name: prepare files
