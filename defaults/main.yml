@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # runc version.
-runc_version: "v1.0.0-rc91"
+runc_version: "v1.0.0-rc92"
 
 # runc download details.
 runc_download: "{{ _runc_download[runc_version] }}"

@@ -9,13 +9,13 @@ Ansible Role for runc Installation.
 
 ## Requirements
 
-This role require Ansible 2.9 or higher.
+This role require Ansible 2.10 or higher.
 
 This role was designed for:
 
-  - Ubuntu 18.04/19.10/20.04
+  - Ubuntu 18.04/20.04
   - RHEL/CentOS 7/8
-  - openSUSE Leap 15.1
+  - openSUSE Leap 15.2
   - Debian 10
   - Fedora 32
 
