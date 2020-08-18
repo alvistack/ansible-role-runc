@@ -15,11 +15,15 @@
 # limitations under the License.
 
 _runc_download:
+  v1.0.0-rc92:
+    url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc92/runc.amd64"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc92"
+    checksum: "sha1:3f1fcd777fb7b0aaaed5cf4b8aa9016cb72010d6"
+  v1.0.0-rc91:
+    url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc91/runc.amd64"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc91"
+    checksum: "sha1:d398332a413f0a51bbab633526a22cf3565fb233"
   v1.0.0-rc90:
     url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc90/runc.amd64"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc90"
     checksum: "sha1:a4db82d5ae0391badcbaff65c36d3a3a2923fdf2"
-  v1.0.0-rc10:
-    url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc10/runc.amd64"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc10"
-    checksum: "sha1:a2fab3406b71d66eb4720c1f9cf9dc6dca669382"
