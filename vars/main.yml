@@ -17,13 +17,13 @@
 _runc_download:
   v1.0.0-rc92:
     url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc92/runc.amd64"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc92"
-    checksum: "sha1:3f1fcd777fb7b0aaaed5cf4b8aa9016cb72010d6"
+    dest: "/var/cache/ansible/256bd490a55a1939a4c9cd15c043404b79a86429ee04129c00d33dab8c0cf040/runc.amd64-v1.0.0-rc92"
+    checksum: "sha256:256bd490a55a1939a4c9cd15c043404b79a86429ee04129c00d33dab8c0cf040"
   v1.0.0-rc91:
     url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc91/runc.amd64"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc91"
-    checksum: "sha1:d398332a413f0a51bbab633526a22cf3565fb233"
+    dest: "/var/cache/ansible/c1c30e250ba1af1bc513a37a85aef8c7824e9b8e76d10c933add58a72d84fce6/runc.amd64-v1.0.0-rc91"
+    checksum: "sha256:c1c30e250ba1af1bc513a37a85aef8c7824e9b8e76d10c933add58a72d84fce6"
   v1.0.0-rc90:
     url: "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc90/runc.amd64"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/runc.amd64-v1.0.0-rc90"
-    checksum: "sha1:a4db82d5ae0391badcbaff65c36d3a3a2923fdf2"
+    dest: "/var/cache/ansible/0fec6929f8675aa7530a7920498e8910365cc9f2867e9a31d2129defd96aa489/runc.amd64-v1.0.0-rc90"
+    checksum: "sha256:0fec6929f8675aa7530a7920498e8910365cc9f2867e9a31d2129defd96aa489"
