@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _runc_download:
+  v1.0.0-rc95:
+    url: "http://github.com/opencontainers/runc/releases/download/v1.0.0-rc95/runc.amd64"
+    dest: "/var/cache/ansible/685a28ac9d548c69512adfb0e301416b41e9a4f5ff30194c7e651b00d8d91a4f/runc.amd64-v1.0.0-rc95"
+    sha256sum: "685a28ac9d548c69512adfb0e301416b41e9a4f5ff30194c7e651b00d8d91a4f"
   v1.0.0-rc94:
     url: "http://github.com/opencontainers/runc/releases/download/v1.0.0-rc94/runc.amd64"
     dest: "/var/cache/ansible/3ddc1ba511a62f87c07417837056607a95d0530f25e544815f17cb756591793b/runc.amd64-v1.0.0-rc94"
@@ -23,7 +27,3 @@ _runc_download:
     url: "http://github.com/opencontainers/runc/releases/download/v1.0.0-rc93/runc.amd64"
     dest: "/var/cache/ansible/9feaa82be15cb190cf0ed76fcb6d22841abd18088d275a47e894cd1e3a0ee4b6/runc.amd64-v1.0.0-rc93"
     sha256sum: "9feaa82be15cb190cf0ed76fcb6d22841abd18088d275a47e894cd1e3a0ee4b6"
-  v1.0.0-rc92:
-    url: "http://github.com/opencontainers/runc/releases/download/v1.0.0-rc92/runc.amd64"
-    dest: "/var/cache/ansible/256bd490a55a1939a4c9cd15c043404b79a86429ee04129c00d33dab8c0cf040/runc.amd64-v1.0.0-rc92"
-    sha256sum: "256bd490a55a1939a4c9cd15c043404b79a86429ee04129c00d33dab8c0cf040"
