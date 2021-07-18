@@ -1,9 +1,13 @@
 # Ansible Role for runc
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-runc/master)](https://gitlab.com/alvistack/ansible-role-runc/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/releases)
-[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.runc-blue.svg)](https://galaxy.ansible.com/alvistack/runc)
+[![Gitlab pipeline
+status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-runc/master)](https://gitlab.com/alvistack/ansible-role-runc/-/pipelines)
+[![GitHub
+release](https://img.shields.io/github/release/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/releases)
+[![GitHub
+license](https://img.shields.io/github/license/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/blob/master/LICENSE)
+[![Ansible
+Role](https://img.shields.io/badge/galaxy-alvistack.runc-blue.svg)](https://galaxy.ansible.com/alvistack/runc)
 
 Ansible Role for runc Installation.
 
@@ -39,7 +43,8 @@ This role could simply deploy to `localhost` as below:
 ## License
 
   - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Docs released under [CC
+    BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
