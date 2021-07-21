@@ -20,7 +20,7 @@
   tasks:
     - name: runc --version
       environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        PATH: "/usr/bin:/usr/sbin:/usr/lib/cri-o-runc/sbin"
       command: runc --version
       register: result
       changed_when: result is not succeeded

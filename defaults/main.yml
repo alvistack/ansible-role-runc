@@ -13,12 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# runc release.
-runc_release: "1.0"
-
-# runc version.
-runc_version: "{{ _runc_version[runc_release] }}"
-
-# runc download details.
-runc_download: "{{ _runc_download[runc_version] }}"
