@@ -36,7 +36,6 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-    default_release: "{{ item.default_release | default(None) or omit }}"
   loop: "{{ _apt }}"
   register: result
   until: result is succeeded
