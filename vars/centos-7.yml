@@ -31,4 +31,4 @@ _yum_repository:
     state: "present"
 
 _yum:
-  - { state: "latest", name: "runc" }
+  - { state: "latest", name: "cri-o-runc" }

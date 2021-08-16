@@ -20,4 +20,4 @@ _zypper_repository:
     state: "present"
 
 _zypper:
-  - { state: "latest", name: "runc" }
+  - { state: "latest", name: "cri-o-runc" }
