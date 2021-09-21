@@ -1,5 +1,7 @@
 # Ansible Role for runc
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-runc/master)](https://gitlab.com/alvistack/ansible-role-runc/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-runc.svg)](https://github.com/alvistack/ansible-role-runc/blob/master/LICENSE)
