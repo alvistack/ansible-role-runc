@@ -21,6 +21,6 @@
     - name: runc --version
       environment:
         PATH: "/usr/bin:/usr/sbin:/usr/lib/cri-o-runc/sbin"
-      command: runc --version
+      ansible.builtin.command: runc --version
       register: result
       changed_when: result is not succeeded
